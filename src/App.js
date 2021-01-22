@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React, { useEffect, useState } from 'react';
+import { ServerAPI } from './ServerAPI'
+
+import { FindSteetApp } from './components/FindSteetApp'
+
+import { LinearProgress, AppBar, Toolbar, Typography } from '@material-ui/core'
+
+
+const App = () => {
+  const [isDataGetted, setIsDataGetted] = useState(false)
+  const [userIP, setUserIP] = useState(null)
+  const [userCity, setUserCity] = useState(null)
+
+  useEffect(() => {
+    const initialization = async () => {
+      const IpAdress = await ServerAPI.getMyIP()
+      setUserIP(IpAdress)
+      const city = await ServerAPI.getMyCity(IpAdress)
+      console.log(city);
+      setUserCity(city)
+      setIsDataGetted(true)
+    }
+
+    initialization()
+  }, [])
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h5">
+            Поиск улиц твоего города
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
+      {
+        isDataGetted
+          ? <FindSteetApp ip={userIP} city={userCity} />
+          : <LinearProgress />
+      }
+    </>
   );
 }
 
 export default App;
+
+
