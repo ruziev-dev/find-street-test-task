@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/find-street-test-task/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/find-street-test-task/static/js/main.b61968b5.chunk.js",
-    "main.js.map": "/find-street-test-task/static/js/main.b61968b5.chunk.js.map",
+    "main.js": "/find-street-test-task/static/js/main.eb3cbd80.chunk.js",
+    "main.js.map": "/find-street-test-task/static/js/main.eb3cbd80.chunk.js.map",
     "runtime-main.js": "/find-street-test-task/static/js/runtime-main.dd5ef6c3.js",
     "runtime-main.js.map": "/find-street-test-task/static/js/runtime-main.dd5ef6c3.js.map",
     "static/js/2.fd44afe1.chunk.js": "/find-street-test-task/static/js/2.fd44afe1.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.dd5ef6c3.js",
     "static/js/2.fd44afe1.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.b61968b5.chunk.js"
+    "static/js/main.eb3cbd80.chunk.js"
   ]
 }
